@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Proof of Concept Elaboration 1}
+\author{Jesse Grubesich}
+\date{August 2019}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+For this elaboration, I will be focusing on the transcription and translation of Cyrillic and Latin script, and Croatian/Serbian/English language. I will be confirming whether or not this is of an appropriate scope in Friday's (30/8/2019) lesson. My concern is not that it will be too big, but that it will be to small; the word "small" is useless without a reference point, true, but I am unsure of the minimum size if there is one. If this does meet the requirements, then I am confident that this will be challenging enough to provide a learning experience and also possible within the bounds of my limited experience.
+
+My project would be specialised for three languages and two scripts; therefore, the accuracy of transcriptions, translations, and possible translations is a primary concern. I would also attempt to provide indicators for human users as to whether a word is a noun, verb, adjective, what its case is (for Croatian and Serbian), what its role in the sentence is, possible synonyms and precise meanings, and so on. Essentially, I want to provide human users, including myself, with as much information as possible about these recommended translations so that they can make informed decisions about what they should change. However, I also want to give users the option of an accurate, automatic full-text translation for journal articles and such - both options are desirable to me. I have included this explanation in case there is any question as to whether the APIs would be able to solve my entire problem for me.
+
+I have next to no experience with programming languages, software libraries, and APIs, but I have made some discoveries through my own research.
+
+\section{APIs/Software Libraries}
+\subsection{Google Translate}
+I was unsure of the exact definition of API until I found a few examples of them and started to see their functions demonstrated to me. I have also seen that the terms API and software library are frequently conflated, so I am unsure as to which to use. Google translate is apparently one such API or software library.
+
+Google Translate is the most obvious item to observe when considering my task. Google translate already does some of the things I would like my project to do; that is to say, it does the core thing - translation and transcription - albeit shoddily and unreliably. My project would be able to capitalise on this API's exiting functions while also building on them, as explained in the introduction.
+
+\subsection{Similar APIs}
+I have been lucky enough to find a wealth of APIs that could help me at the following page: https://rapidapi.com/collection/translation-apis. Some of the APIs here are jokes, but there are a few that stand out as being potentially useful to me:
+\begin{itemize}
+\item IBMWatsonLanguageTranslator, which automatically detects the language used in my input text (unless I misunderstand, and they mean programming language, in which case it may still be helpful, but for different reasons)
+\item SYSTRAN.io, a collection of APIs for translation and multilingual dictionary lookups
+\item MyMemory, Microsoft Text Translate, YandexTranslate, and Trans-lator all appear to be alternatives with close functions to Google Translate. They all appear to be free aside from Trans-lator. I would have to test these to find out which is the most suited for my task, but at least I have options.
+\end{itemize}
+
+All of these APIs cold be used to solve the first step - transcribe and translate.
+
+\subsection{APIs for Grammar Analysis}
+I also managed to find a number of APIs that could be used for my second step - analyse and report on grammar. APIs like TextAnalysis, LanguageTool, and Perfect Tense all have the functoinalities I'm looking for - they analyse grammar and flag problems.
+
+Unfortunately, I so far haven't found any APIs that could help me with Croatian and Serbian grammar and Cyrillic-Latin transcription.
+
+
+\section{Programming Languages}
+I have very little idea on how to start ranking the efficacy of different programming languages in my project, as I have never programmed before or used any of these languages as far as I know. The common/popular ones appear to be Java, C, C++, Python, and Go. I gave a cursory glance to all of these, except for Python, on which I focused a little more, as it's part of a lesson in Data Carpentry, which I imagine indicates it's somewhat easier to learn than the others.
+
+\subsection{Python}
+Python is supposedly good for beginners, as it emphasises readability. As a beginner, I am much more interested in accessibility and readability than nuance in programming languages, so, without knowing any of its actual functions or how it works, Python seems like a good choice for my minimal experience.
+
+\subsection{Low-Level Programming Languages}
+When I searched these up, I imagined that they would be easier to use than high-level languages based on their name. It appears I was wrong. I briefly looked at Assembly and Machine Code and found that "low-level" means "micro-control", rather than "easy to use", so it is quite the opposite. While low-level programming languages may be helpful in my project, I doubt I will be using them due to my lack of experience, but I may re-evaluate this in the future. It is good to have such options, in any case.
+\end{document}
