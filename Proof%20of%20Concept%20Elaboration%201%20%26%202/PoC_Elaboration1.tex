@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Proof of Concept Elaboration 1 and 2}
+\author{Jesse Grubesich}
+\date{August 2019}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+\section{Introduction}
+For this elaboration, I will be focusing on the transliteration and translation of Cyrillic and Latin script, and Croatian/Serbian/English language. I will be confirming whether or not this is of an appropriate scope in Friday's (30/8/2019) lesson. My concern is not that it will be too big, but that it will be to small; the word "small" is useless without a reference point, true, but I am unsure of the minimum size if there is one. If this does meet the requirements, then I am confident that this will be challenging enough to provide a learning experience and also possible within the bounds of my limited experience (Edit: confirmed; I Spoke to Shawn, and he says it sounds like a solid project although transliteration might not be possible with the available APIs, but I will confirm that on my own time).
+
+My project would be specialised for three languages and two scripts; therefore, the accuracy of transliterations, translations, and possible translations is a primary concern. I would also attempt to provide indicators for human users as to whether a word is a noun, verb, adjective, what its case is (for Croatian and Serbian), what its role in the sentence is, possible synonyms and precise meanings, and so on. Essentially, I want to provide human users, including myself, with as much information as possible about these recommended translations so that they can make informed decisions about what they should change. However, I also want to give users the option of an accurate, automatic full-text translation for journal articles and such - both options are desirable to me. I have included this explanation in case there is any question as to whether the APIs alone, without any need for programming on my end, would be able to solve my entire problem for me.
+
+As a reminder of what my jobs in this project will entail, I write them here:
+\begin{enumerate}
+\item Find an article written in Croatian or Serbian
+\item (Optional) transliterate every letter from its Cyrillic form to the Latin equivalent
+\item Translate words from one language to another
+\item (If translating from Croatian or Serbian to English) fix word order
+\item Potentially use translated quotes in my paper
+\end{enumerate}
+I have next to no experience with programming languages, software libraries, and APIs, but I have made some discoveries through my own research.
+
+\section{APIs/Software Libraries}
+\subsection{Google Translate}
+I was unsure of the exact definition of API until I found a few examples of them and started to see their functions demonstrated to me. I have also seen that the terms API and software library are frequently conflated, so I am unsure as to which to use. Google translate is apparently one such API or software library.
+
+Google Translate is the most obvious item to observe when considering my task. Google translate already does some of the things I would like my project to do; that is to say, it does the core thing - translation and transcription - albeit shoddily and unreliably. My project would be able to capitalise on this API's exiting functions while also building on them, as explained in the introduction.
+
+\subsection{Similar APIs}
+I have been lucky enough to find a wealth of APIs that could help me at the following page: https://rapidapi.com/collection/translation-apis. Some of the APIs here are jokes, but there are a few that stand out as being potentially useful to me:
+\begin{itemize}
+\item IBMWatsonLanguageTranslator, which automatically detects the language used in my input text
+\item SYSTRAN.io, a collection of APIs for translation and multilingual dictionary lookups
+\item MyMemory, Microsoft Text Translate, Yandex.Translate, and Trans-lator all appear to be alternatives with close functions to Google Translate. They all appear to be free aside from Trans-lator. I would have to test these to find out which is the most suited for my task, but at least I have options.
+\item At least Yandex.Translate, Microsoft Text Translate, and IBMWatsonLanguageTranslator also transliterate text.
+\end{itemize}
+
+Any of these APIs cold be used to solve the first step - transliterate and translate.
+
+\subsection{APIs for Grammar Analysis}
+I also managed to find a number of APIs that could be used for the next step - analyse and report on grammar. APIs like TextAnalysis, LanguageTool, and Perfect Tense all have the functionalities I'm looking for - they analyse grammar and flag problems.
+
+\section{Programming Languages}
+I have very little idea on how to start ranking the efficacy of different programming languages in my project, as I have never programmed before or used any of these languages as far as I know. The common/popular ones appear to be Java, C, C++, Python, and Go. I gave a cursory glance to all of these, except for Python, on which I focused a little more, as it's part of a lesson in Data Carpentry, which I imagine indicates it's somewhat easier to learn than the others.
+
+\subsection{Python}
+Python is supposedly good for beginners, as it emphasises readability. As a beginner, I am much more interested in accessibility and readability than nuance in programming languages, so, without knowing any of its actual functions or how it works, Python seems like a good choice for my minimal experience. I tested it, but I am more familiar with Bash, the language that we have been using, so I would prefer to use Bash, as it seems to be powerful enough to do the tasks I desire.
+
+\subsection{R}
+This language is again quite popular and good for beginners, but as far as I understand, it is less general and harder to use than python, and so as a beginner, I would take up Python before I took up R.
+
+\subsection{Low-Level Programming Languages}
+When I searched these up, I imagined that they would be easier to use than high-level languages based on their name. It appears I was wrong. I briefly looked at Assembly and Machine Code and found that "low-level" means "micro-control", rather than "easy to use", so it is quite the opposite. While low-level programming languages might theoretically be helpful in my project, I doubt I will be using them due to my lack of experience, but it is good to know such options, in any case.
+
+\subsection{Bash}
+At the time of writing about and testing Python, I did not realise that Bash was the programming language that we have already been using. I most certainly will be using this programming language in my project.
+
+\section{Testing APIs}
+\subsection{Yandex.Translate}
+Yandex.Translate (found here: https://tech.yandex.com/translate/) seems like the most helpful and appropriate API for my uses and intentions. I've done some testing with it and found it to be fairly accurate with translation, and I see no problem with how it transliterates Serbian Cyrillic to Croatian and English Latin. The algorithm works well to show the best possible translation, including taking into account sentence lengths, which is a primary concern when translating into Croatian and Serbian (sentence length is flexible due to implied pronouns in verbs and implied articles in nouns; translating into full-length sentences with articles and pronouns can sound stilted and unnatural in Serbian and Croatian).
+
+A visual explanation for the algorithms of Yandex.Translate have been uploaded to the left panel (or as a pdf in iLearn).
+
+Upon testing this technology, I found it to be impressively reliable. I tested long sentences and complex syntax. Of the three complex sentences (i.e. long rambling sentences with many commas - designed to test the system's limits) that I created in English to translate to Croatian and Serbian, there was only one sentence which I found to be questionable, and this sentence was not explicitly a mistake, either; it  omitted a personal pronoun, which obscured the intended meaning, but the sentence made sense. I believe Yandex would be the best and most appropriate tool for this given how it works. It's efficient; I've been testing it successfully, and it has everything I require for the major steps in my jobs of translation and transliteration.
+
+\subsection{Alternatives to Yandex}
+The simply-named 'Translation API' is an API in the collection of SYSTRAN.io. I've done some testing with this as well, and I've concluded that it is less efficient to Yandex.Translate. However, being part of the SYSTRAN.io collection, it is easier to integrate with other SYSTRAN.io APIs that might help my project - dictionary look-ups, morphological analysis, text extraction, etc.. At this point, I would prefer to use the Yandex.Translate API as it has worked well in tests, but SYSTRAN.io's Translation API appears to be the next-best thing, in case I run into problems with Yandex.
+
+\end{document}
